@@ -1,0 +1,814 @@
+{
+  "version": "2026-02-25T12:00:00Z",
+  "last_updated": "2026-02-25T12:00:00Z",
+  "source": "https://docs.github.com/en/copilot/reference/ai-models/supported-models",
+  "models": [
+    {
+      "id": "gpt-4.1",
+      "name": "GPT-4.1",
+      "provider": "OpenAI",
+      "description": "汎用バランス型。速度・品質・コストのバランスが良く幅広いタスクに対応。",
+      "context_window": 1047576,
+      "cost_tier": "free",
+      "premium_multiplier": { "chat": "0", "completions": "1" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 4.5,
+        "reasoning": 3.5,
+        "coding": 4.0,
+        "context_length": 4.0,
+        "cost_efficiency": 5.0,
+        "instruction_following": 4.0,
+        "creativity": 3.5,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "チャット乗数0で無制限に使用可能",
+        "汎用性が高くあらゆるタスクに対応",
+        "速度と品質のバランスが優れている"
+      ],
+      "cautions": [
+        "最新の推論モデルと比較すると複雑な論理推論で劣る",
+        "Codex系モデルほどのコーディング特化性能はない"
+      ],
+      "best_for": [
+        "日常的なコーディング支援",
+        "コードレビュー・説明",
+        "エラー解説"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5-mini",
+      "name": "GPT-5 mini",
+      "provider": "OpenAI",
+      "description": "高速で正確なデフォルトモデル。多言語・多フレームワーク対応。",
+      "context_window": 1047576,
+      "cost_tier": "free",
+      "premium_multiplier": { "chat": "0", "completions": "1" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 5.0,
+        "reasoning": 4.0,
+        "coding": 4.0,
+        "context_length": 4.0,
+        "cost_efficiency": 5.0,
+        "instruction_following": 4.0,
+        "creativity": 3.5,
+        "long_output": 3.5
+      },
+      "strengths": [
+        "チャット乗数0で無制限に使用可能",
+        "高速レスポンスで対話的デバッグに最適",
+        "マルチモーダル入力（画像）対応"
+      ],
+      "cautions": [
+        "超大規模リファクタリングには力不足",
+        "GPT-5.1/5.2と比較すると推論力で劣る"
+      ],
+      "best_for": [
+        "対話的なコード分析・デバッグ",
+        "画像を含むUI関連の質問",
+        "日常的なコーディング全般"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.1",
+      "name": "GPT-5.1",
+      "provider": "OpenAI",
+      "description": "深い推論・多段階問題解決に優れた高性能モデル。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "多段階の問題解決とアーキテクチャレベルのコード分析",
+        "複雑なリファクタリングに対応",
+        "技術的意思決定の支援"
+      ],
+      "cautions": [
+        "応答速度はGPT-5 miniより遅い",
+        "プレミアムリクエスト消費（乗数1）"
+      ],
+      "best_for": [
+        "複雑なバグの多段階デバッグ",
+        "アーキテクチャ設計の検討",
+        "大規模リファクタリング"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.1-codex",
+      "name": "GPT-5.1-Codex",
+      "provider": "OpenAI",
+      "description": "複雑なエンジニアリングタスクに特化。機能実装・テスト・デバッグに強い。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 5.0,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 3.5,
+        "long_output": 4.5
+      },
+      "strengths": [
+        "機能実装・テスト・デバッグ・レビューで高品質",
+        "長い指示なしでも優れたコード生成",
+        "VS Code で Copilot Agent として使用可能"
+      ],
+      "cautions": [
+        "チャットモードでは一部IDE未対応",
+        "汎用的な質問にはオーバースペック"
+      ],
+      "best_for": [
+        "複雑な機能のゼロからの実装",
+        "テストコード生成",
+        "コードレビュー・リファクタリング"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.1-codex-mini",
+      "name": "GPT-5.1-Codex-Mini",
+      "provider": "OpenAI",
+      "description": "Codexの軽量版。低コストで多段階の問題解決が可能。",
+      "context_window": 1047576,
+      "cost_tier": "low",
+      "premium_multiplier": { "chat": "0.33", "completions": "Not applicable" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 4.0,
+        "reasoning": 4.0,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 4.0,
+        "instruction_following": 4.0,
+        "creativity": 3.5,
+        "long_output": 3.5
+      },
+      "strengths": [
+        "低コスト（乗数0.33）で深い推論が可能",
+        "Codex系の品質をコスパ良く利用",
+        "多段階の問題解決に対応"
+      ],
+      "cautions": [
+        "プレビュー版のため仕様変更の可能性あり",
+        "フルサイズCodexほどの精度はない"
+      ],
+      "best_for": [
+        "コスト効率の良いコード分析",
+        "中程度の複雑さのデバッグ",
+        "日常的なコーディング支援"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.1-codex-max",
+      "name": "GPT-5.1-Codex-Max",
+      "provider": "OpenAI",
+      "description": "エージェント型ソフトウェア開発に最適化された最上位Codexモデル。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 2.5,
+        "reasoning": 5.0,
+        "coding": 5.0,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 5.0,
+        "creativity": 4.0,
+        "long_output": 5.0
+      },
+      "strengths": [
+        "エージェント型開発タスクに最適化",
+        "複数ファイルにまたがる大規模変更に対応",
+        "高い指示追従性と長文出力品質"
+      ],
+      "cautions": [
+        "応答速度は遅め",
+        "簡単なタスクにはオーバースペック"
+      ],
+      "best_for": [
+        "エージェント型の自律的開発",
+        "大規模なコードベース変更",
+        "複雑なプロジェクト全体の改善"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.2",
+      "name": "GPT-5.2",
+      "provider": "OpenAI",
+      "description": "高度な推論・コード分析・技術的意思決定に優れたモデル。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 5.0,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.5,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "複雑な推論・コード分析・技術的意思決定に強い",
+        "GPT-5の後継として全面的に性能向上",
+        "多段階の問題解決に優れる"
+      ],
+      "cautions": [
+        "プレミアムリクエストを消費（乗数1）",
+        "高速性を求めるタスクには不向き"
+      ],
+      "best_for": [
+        "難解なバグの根本原因分析",
+        "アーキテクチャ設計の検討",
+        "ライブラリ・パターンの比較検討"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.2-codex",
+      "name": "GPT-5.2-Codex",
+      "provider": "OpenAI",
+      "description": "エージェント型開発に特化した最新Codexモデル。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 2.5,
+        "reasoning": 5.0,
+        "coding": 5.0,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 5.0,
+        "creativity": 4.0,
+        "long_output": 5.0
+      },
+      "strengths": [
+        "エージェント型タスクで最高レベルの性能",
+        "GPT-5.2の推論力 + Codex特化の精度",
+        "複雑な機能実装を自律的に実行"
+      ],
+      "cautions": [
+        "応答速度は遅め",
+        "一部IDEのみ対応"
+      ],
+      "best_for": [
+        "エージェント型の自律的ソフトウェア開発",
+        "大規模な機能実装",
+        "複雑なリファクタリング"
+      ],
+      "available": true
+    },
+    {
+      "id": "gpt-5.3-codex",
+      "name": "GPT-5.3-Codex",
+      "provider": "OpenAI",
+      "description": "最新世代のCodexモデル。VS CodeとGitHub.comで利用可能。",
+      "context_window": 1047576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 2.5,
+        "reasoning": 5.0,
+        "coding": 5.0,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 5.0,
+        "creativity": 4.0,
+        "long_output": 5.0
+      },
+      "strengths": [
+        "最新世代のCodexモデル",
+        "高い推論力とコード生成精度",
+        "エージェント型タスクに対応"
+      ],
+      "cautions": [
+        "VS CodeとGitHub.comのみ対応",
+        "JetBrains等のIDEでは使用不可"
+      ],
+      "best_for": [
+        "最新のAIコーディング体験",
+        "エージェント型開発タスク",
+        "高度な問題解決"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-haiku-4.5",
+      "name": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "description": "高速＆低コスト。軽量タスクやシンプルなコード説明に最適。",
+      "context_window": 200000,
+      "cost_tier": "low",
+      "premium_multiplier": { "chat": "0.33", "completions": "1" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 5.0,
+        "reasoning": 3.0,
+        "coding": 3.5,
+        "context_length": 3.0,
+        "cost_efficiency": 4.0,
+        "instruction_following": 3.5,
+        "creativity": 3.0,
+        "long_output": 3.0
+      },
+      "strengths": [
+        "非常に高速なレスポンス",
+        "低コスト（チャット乗数0.33）",
+        "軽量なコード説明・質問に最適"
+      ],
+      "cautions": [
+        "複雑な推論やリファクタリングには力不足",
+        "大規模コードの理解には限界がある"
+      ],
+      "best_for": [
+        "シンプルな構文質問",
+        "ユーティリティ関数の作成",
+        "素早いプロトタイピング"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-opus-4.5",
+      "name": "Claude Opus 4.5",
+      "provider": "Anthropic",
+      "description": "Anthropicの高性能モデル。複雑な問題解決と洗練された推論。",
+      "context_window": 200000,
+      "cost_tier": "high",
+      "premium_multiplier": { "chat": "3", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 2.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 3.0,
+        "cost_efficiency": 2.0,
+        "instruction_following": 4.5,
+        "creativity": 4.5,
+        "long_output": 4.5
+      },
+      "strengths": [
+        "複雑な問題解決と洗練された推論",
+        "高品質なコード生成",
+        "丁寧で正確な説明"
+      ],
+      "cautions": [
+        "高コスト（チャット乗数3）",
+        "応答速度が遅め"
+      ],
+      "best_for": [
+        "複雑なアーキテクチャ設計",
+        "高品質なコードレビュー",
+        "技術的な意思決定支援"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-opus-4.6",
+      "name": "Claude Opus 4.6",
+      "provider": "Anthropic",
+      "description": "Anthropic最強モデル。Opus 4.5を全面的に改善した最新版。",
+      "context_window": 200000,
+      "cost_tier": "high",
+      "premium_multiplier": { "chat": "3", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 2.0,
+        "reasoning": 5.0,
+        "coding": 5.0,
+        "context_length": 3.0,
+        "cost_efficiency": 2.0,
+        "instruction_following": 5.0,
+        "creativity": 5.0,
+        "long_output": 4.5
+      },
+      "strengths": [
+        "Anthropic最高性能の推論能力",
+        "Opus 4.5からさらに改善された精度",
+        "複雑な問題解決で最高レベル"
+      ],
+      "cautions": [
+        "高コスト（チャット乗数3）",
+        "応答速度が遅め"
+      ],
+      "best_for": [
+        "最高品質が求められる複雑な問題解決",
+        "高度なコード分析・設計",
+        "難易度の高い推論タスク"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-opus-4.6-fast",
+      "name": "Claude Opus 4.6 (fast mode)",
+      "provider": "Anthropic",
+      "description": "Opus 4.6の高速版。非常に高コストだが最速の高性能推論。",
+      "context_window": 200000,
+      "cost_tier": "premium",
+      "premium_multiplier": { "chat": "30", "completions": "Not applicable" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 4.0,
+        "reasoning": 5.0,
+        "coding": 5.0,
+        "context_length": 3.0,
+        "cost_efficiency": 1.0,
+        "instruction_following": 5.0,
+        "creativity": 5.0,
+        "long_output": 4.5
+      },
+      "strengths": [
+        "Opus 4.6相当の推論力を高速で提供",
+        "レイテンシが重要な高度タスクに最適",
+        "VS Codeでのみ利用可能"
+      ],
+      "cautions": [
+        "極めて高コスト（チャット乗数30）",
+        "VS Codeのみ対応",
+        "プレビュー版"
+      ],
+      "best_for": [
+        "時間制約のある高度な問題解決",
+        "高速な複雑推論が必要な場面"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-sonnet-4",
+      "name": "Claude Sonnet 4",
+      "provider": "Anthropic",
+      "description": "性能と実用性のバランス。信頼性の高い補完とスマートな推論。",
+      "context_window": 200000,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.5,
+        "reasoning": 4.0,
+        "coding": 4.5,
+        "context_length": 3.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "コーディングワークフローに最適化されたバランス",
+        "信頼性の高いコード補完",
+        "マルチモーダル入力対応（画像理解）"
+      ],
+      "cautions": [
+        "Opus系ほどの推論深度はない",
+        "超大規模タスクには不向き"
+      ],
+      "best_for": [
+        "日常的なコーディングワークフロー",
+        "複雑なバグの段階的デバッグ",
+        "UIコンポーネントのビジュアルデバッグ"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-sonnet-4.5",
+      "name": "Claude Sonnet 4.5",
+      "provider": "Anthropic",
+      "description": "汎用コーディングとエージェントタスクに優れた次世代Sonnet。",
+      "context_window": 200000,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.5,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 3.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.5,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "汎用コーディングとエージェントタスクに優れる",
+        "複雑な問題解決力がSonnet 4から向上",
+        "洗練された推論能力"
+      ],
+      "cautions": [
+        "Opus系と比較すると最も困難な推論で差がある",
+        "応答速度はHaikuに劣る"
+      ],
+      "best_for": [
+        "汎用的なコーディング支援",
+        "エージェント型タスク",
+        "バランスの取れた開発作業全般"
+      ],
+      "available": true
+    },
+    {
+      "id": "claude-sonnet-4.6",
+      "name": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "description": "最新Sonnet。さらに改善された推論とコーディング精度。",
+      "context_window": 200000,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.5,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 3.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.5,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "Sonnet 4.5からさらに改善された精度",
+        "一部IDE限定だが最高のSonnet体験",
+        "乗数1でバランスの良いコスパ"
+      ],
+      "cautions": [
+        "VS Code, GitHub.com, JetBrainsのみ対応",
+        "乗数が変更される可能性あり（プレビュー的）"
+      ],
+      "best_for": [
+        "最新の高精度コーディング支援",
+        "複雑な推論とコード分析",
+        "信頼性の高い回答が必要な場面"
+      ],
+      "available": true
+    },
+    {
+      "id": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "description": "Googleの高性能推論モデル。複雑なコード生成・デバッグ・リサーチに強い。",
+      "context_window": 1048576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.0,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "非常に長いコンテキスト（1Mトークン）",
+        "複雑なコード生成とデバッグに優れる",
+        "リサーチワークフローに最適"
+      ],
+      "cautions": [
+        "応答速度はFlash系より遅い",
+        "プレミアムリクエスト消費（乗数1）"
+      ],
+      "best_for": [
+        "大規模コードベースの分析",
+        "複雑なデバッグとリサーチ",
+        "長いコンテキストが必要なタスク"
+      ],
+      "available": true
+    },
+    {
+      "id": "gemini-3-flash",
+      "name": "Gemini 3 Flash",
+      "provider": "Google",
+      "description": "高速＆低コスト。軽量な質問やシンプルなタスクに最適。",
+      "context_window": 1048576,
+      "cost_tier": "low",
+      "premium_multiplier": { "chat": "0.33", "completions": "Not applicable" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 5.0,
+        "reasoning": 3.0,
+        "coding": 3.5,
+        "context_length": 4.0,
+        "cost_efficiency": 4.0,
+        "instruction_following": 3.5,
+        "creativity": 3.0,
+        "long_output": 3.0
+      },
+      "strengths": [
+        "非常に高速なレスポンス",
+        "低コスト（チャット乗数0.33）",
+        "1Mトークンの長いコンテキスト"
+      ],
+      "cautions": [
+        "プレビュー版のため仕様変更の可能性",
+        "複雑な推論タスクには不向き"
+      ],
+      "best_for": [
+        "軽量なコーディング質問",
+        "素早いフィードバック",
+        "シンプルなコード生成"
+      ],
+      "available": true
+    },
+    {
+      "id": "gemini-3-pro",
+      "name": "Gemini 3 Pro",
+      "provider": "Google",
+      "description": "高度な推論と長いコンテキスト。科学的・技術的分析に強い。",
+      "context_window": 1048576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.0,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "高度な推論力と長コンテキスト対応",
+        "マルチモーダル入力対応",
+        "科学的・技術的分析に優れる"
+      ],
+      "cautions": [
+        "プレビュー版のため仕様変更の可能性",
+        "応答速度はFlashより遅い"
+      ],
+      "best_for": [
+        "複雑なコード生成・デバッグ",
+        "画像を含む技術的質問",
+        "リサーチワークフロー"
+      ],
+      "available": true
+    },
+    {
+      "id": "gemini-3.1-pro",
+      "name": "Gemini 3.1 Pro",
+      "provider": "Google",
+      "description": "高精度な編集→テストループに最適化。ツール精度が高い。",
+      "context_window": 1048576,
+      "cost_tier": "medium",
+      "premium_multiplier": { "chat": "1", "completions": "Not applicable" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "編集→テストの反復ループに最適化",
+        "高いツール精度",
+        "効率的なコーディングワークフロー"
+      ],
+      "cautions": [
+        "プレビュー版",
+        "一部IDE（VS Code, GitHub.com, JetBrains）でのみ利用可能"
+      ],
+      "best_for": [
+        "編集→テストの反復開発",
+        "高精度なツール使用が必要な場面",
+        "効率的なコーディング"
+      ],
+      "available": true
+    },
+    {
+      "id": "grok-code-fast-1",
+      "name": "Grok Code Fast 1",
+      "provider": "xAI",
+      "description": "コーディングに特化した高速モデル。多言語でのコード生成・デバッグ。",
+      "context_window": 131072,
+      "cost_tier": "low",
+      "premium_multiplier": { "chat": "0.25", "completions": "Not applicable" },
+      "release_status": "GA",
+      "performance": {
+        "speed": 4.5,
+        "reasoning": 3.5,
+        "coding": 4.0,
+        "context_length": 2.0,
+        "cost_efficiency": 4.0,
+        "instruction_following": 3.5,
+        "creativity": 3.5,
+        "long_output": 3.5
+      },
+      "strengths": [
+        "非常に低コスト（チャット乗数0.25）",
+        "コーディングに特化した高速モデル",
+        "多言語でのコード生成に対応"
+      ],
+      "cautions": [
+        "コンテキスト長が128Kと比較的短い",
+        "超複雑な推論タスクには不向き"
+      ],
+      "best_for": [
+        "コスト効率の良いコーディング支援",
+        "高速なコード生成・デバッグ",
+        "日常的なプログラミング全般"
+      ],
+      "available": true
+    },
+    {
+      "id": "raptor-mini",
+      "name": "Raptor mini",
+      "provider": "GitHub",
+      "description": "GPT-5 miniのファインチューン。高速で正確なインライン提案に特化。",
+      "context_window": 1047576,
+      "cost_tier": "free",
+      "premium_multiplier": { "chat": "0", "completions": "1" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 5.0,
+        "reasoning": 3.5,
+        "coding": 4.0,
+        "context_length": 4.0,
+        "cost_efficiency": 5.0,
+        "instruction_following": 4.0,
+        "creativity": 3.0,
+        "long_output": 3.0
+      },
+      "strengths": [
+        "チャット乗数0で無制限使用可能",
+        "高速で正確なインライン提案に特化",
+        "GPT-5 miniベースのファインチューン"
+      ],
+      "cautions": [
+        "プレビュー版",
+        "VS Codeでのみ利用可能",
+        "深い推論タスクには不向き"
+      ],
+      "best_for": [
+        "コスト0で高速なコード補完",
+        "インラインの提案・説明",
+        "日常的な開発作業"
+      ],
+      "available": true
+    },
+    {
+      "id": "goldeneye",
+      "name": "Goldeneye",
+      "provider": "GitHub",
+      "description": "GPT-5.1-Codexのファインチューン。複雑な問題解決と洗練された推論。",
+      "context_window": 1047576,
+      "cost_tier": "free",
+      "premium_multiplier": { "chat": "Not applicable", "completions": "1" },
+      "release_status": "Public preview",
+      "performance": {
+        "speed": 3.0,
+        "reasoning": 4.5,
+        "coding": 4.5,
+        "context_length": 4.0,
+        "cost_efficiency": 3.0,
+        "instruction_following": 4.5,
+        "creativity": 4.0,
+        "long_output": 4.0
+      },
+      "strengths": [
+        "GPT-5.1-Codexベースの高品質ファインチューン",
+        "複雑な問題解決と洗練された推論",
+        "コード補完に特化"
+      ],
+      "cautions": [
+        "プレビュー版",
+        "VS Codeでのみ利用可能",
+        "チャットでは使用不可（補完専用）"
+      ],
+      "best_for": [
+        "高品質なコード補完",
+        "複雑な問題のインライン解決",
+        "深い推論が必要なコード生成"
+      ],
+      "available": true
+    }
+  ]
+}

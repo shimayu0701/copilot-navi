@@ -1,0 +1,463 @@
+{
+  "version": "2026-02-25T10:00:00Z",
+  "base_weights": {
+    "speed": 0.15,
+    "reasoning": 0.20,
+    "coding": 0.25,
+    "context_length": 0.10,
+    "cost_efficiency": 0.15,
+    "instruction_following": 0.05,
+    "creativity": 0.05,
+    "long_output": 0.05
+  },
+  "category_overrides": {
+    "new_development": {
+      "coding": 0.30,
+      "reasoning": 0.25,
+      "creativity": 0.15,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "context_length": 0.05,
+      "instruction_following": 0.03,
+      "long_output": 0.02
+    },
+    "bug_fixing": {
+      "coding": 0.20,
+      "reasoning": 0.30,
+      "context_length": 0.20,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "instruction_following": 0.05,
+      "creativity": 0.03,
+      "long_output": 0.02
+    },
+    "code_understanding": {
+      "reasoning": 0.30,
+      "context_length": 0.25,
+      "coding": 0.15,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "instruction_following": 0.05,
+      "creativity": 0.03,
+      "long_output": 0.02
+    },
+    "refactoring": {
+      "coding": 0.35,
+      "reasoning": 0.25,
+      "instruction_following": 0.15,
+      "context_length": 0.10,
+      "cost_efficiency": 0.08,
+      "speed": 0.05,
+      "creativity": 0.01,
+      "long_output": 0.01
+    },
+    "testing": {
+      "coding": 0.30,
+      "instruction_following": 0.25,
+      "reasoning": 0.20,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "context_length": 0.03,
+      "creativity": 0.01,
+      "long_output": 0.01
+    },
+    "documentation": {
+      "instruction_following": 0.30,
+      "creativity": 0.20,
+      "coding": 0.15,
+      "speed": 0.15,
+      "cost_efficiency": 0.10,
+      "long_output": 0.05,
+      "reasoning": 0.03,
+      "context_length": 0.02
+    },
+    "learning": {
+      "reasoning": 0.30,
+      "creativity": 0.25,
+      "instruction_following": 0.15,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "coding": 0.05,
+      "context_length": 0.03,
+      "long_output": 0.02
+    },
+    "code_generation": {
+      "coding": 0.35,
+      "speed": 0.20,
+      "cost_efficiency": 0.20,
+      "instruction_following": 0.10,
+      "reasoning": 0.08,
+      "long_output": 0.05,
+      "context_length": 0.01,
+      "creativity": 0.01
+    },
+    "devops": {
+      "coding": 0.25,
+      "instruction_following": 0.25,
+      "reasoning": 0.20,
+      "speed": 0.10,
+      "cost_efficiency": 0.10,
+      "context_length": 0.05,
+      "creativity": 0.03,
+      "long_output": 0.02
+    },
+    "security": {
+      "reasoning": 0.35,
+      "coding": 0.25,
+      "instruction_following": 0.15,
+      "context_length": 0.10,
+      "cost_efficiency": 0.08,
+      "speed": 0.05,
+      "creativity": 0.01,
+      "long_output": 0.01
+    }
+  },
+  "subcategory_multipliers": {
+    "idea_brainstorm": {
+      "creativity": 1.5,
+      "reasoning": 1.3,
+      "coding": 0.5
+    },
+    "architecture_design": {
+      "reasoning": 1.8,
+      "coding": 0.7,
+      "creativity": 1.2,
+      "long_output": 1.3
+    },
+    "prototype_mvp": {
+      "coding": 1.3,
+      "speed": 1.2,
+      "cost_efficiency": 1.2
+    },
+    "new_feature": {
+      "coding": 1.4,
+      "reasoning": 1.2
+    },
+    "data_model": {
+      "reasoning": 1.4,
+      "coding": 1.2
+    },
+    "ui_implementation": {
+      "coding": 1.4,
+      "instruction_following": 1.3
+    },
+    "spec_writing": {
+      "instruction_following": 1.5,
+      "creativity": 1.2,
+      "long_output": 1.3
+    },
+    "poc": {
+      "coding": 1.3,
+      "reasoning": 1.3,
+      "speed": 1.1
+    },
+    "runtime_error": {
+      "reasoning": 1.3,
+      "coding": 1.2,
+      "speed": 1.1
+    },
+    "logic_error": {
+      "reasoning": 1.5,
+      "coding": 1.2
+    },
+    "performance_issue": {
+      "reasoning": 1.5,
+      "coding": 1.3,
+      "context_length": 1.2
+    },
+    "memory_leak": {
+      "reasoning": 1.8,
+      "coding": 1.2,
+      "context_length": 1.3
+    },
+    "hard_to_reproduce": {
+      "reasoning": 2.0,
+      "context_length": 1.5
+    },
+    "concurrency_bug": {
+      "reasoning": 2.0,
+      "coding": 1.2
+    },
+    "env_issue": {
+      "coding": 1.2,
+      "instruction_following": 1.3,
+      "speed": 1.2
+    },
+    "overall_structure": {
+      "context_length": 2.0,
+      "reasoning": 1.3
+    },
+    "legacy_code": {
+      "context_length": 1.8,
+      "reasoning": 1.5,
+      "coding": 1.1
+    },
+    "others_code": {
+      "context_length": 1.5,
+      "reasoning": 1.2
+    },
+    "complex_algorithm": {
+      "reasoning": 2.0,
+      "coding": 1.2
+    },
+    "dependency_analysis": {
+      "context_length": 1.8,
+      "reasoning": 1.3
+    },
+    "data_flow": {
+      "context_length": 1.5,
+      "reasoning": 1.3
+    },
+    "code_quality": {
+      "coding": 1.5,
+      "instruction_following": 1.3
+    },
+    "performance_optimization": {
+      "reasoning": 1.5,
+      "coding": 1.4
+    },
+    "design_pattern": {
+      "reasoning": 1.5,
+      "coding": 1.3,
+      "creativity": 1.2
+    },
+    "tech_debt": {
+      "coding": 1.4,
+      "context_length": 1.3,
+      "reasoning": 1.2
+    },
+    "dry": {
+      "coding": 1.5,
+      "reasoning": 1.2
+    },
+    "arch_change": {
+      "reasoning": 1.8,
+      "coding": 1.3,
+      "creativity": 1.2,
+      "context_length": 1.5
+    },
+    "unit_test": {
+      "coding": 1.4,
+      "instruction_following": 1.3,
+      "speed": 1.2
+    },
+    "integration_test": {
+      "coding": 1.4,
+      "reasoning": 1.2,
+      "context_length": 1.2
+    },
+    "e2e_test": {
+      "coding": 1.3,
+      "instruction_following": 1.3
+    },
+    "test_strategy": {
+      "reasoning": 1.5,
+      "creativity": 1.3,
+      "instruction_following": 1.2
+    },
+    "test_refactor": {
+      "coding": 1.4,
+      "instruction_following": 1.3
+    },
+    "api_doc": {
+      "instruction_following": 1.5,
+      "coding": 1.2,
+      "long_output": 1.3
+    },
+    "readme": {
+      "instruction_following": 1.5,
+      "creativity": 1.3,
+      "long_output": 1.2
+    },
+    "code_review": {
+      "reasoning": 1.4,
+      "coding": 1.3,
+      "instruction_following": 1.2
+    },
+    "design_doc": {
+      "instruction_following": 1.4,
+      "creativity": 1.3,
+      "reasoning": 1.2,
+      "long_output": 1.3
+    },
+    "comments": {
+      "instruction_following": 1.5,
+      "coding": 1.2
+    },
+    "new_tech": {
+      "reasoning": 1.3,
+      "creativity": 1.2
+    },
+    "concept": {
+      "reasoning": 1.5,
+      "creativity": 1.2
+    },
+    "best_practice": {
+      "reasoning": 1.3,
+      "instruction_following": 1.2
+    },
+    "arch_consult": {
+      "reasoning": 1.8,
+      "creativity": 1.3
+    },
+    "comparison": {
+      "reasoning": 1.5,
+      "creativity": 1.2
+    },
+    "boilerplate": {
+      "coding": 1.5,
+      "speed": 1.3,
+      "instruction_following": 1.3
+    },
+    "crud": {
+      "coding": 1.5,
+      "speed": 1.2,
+      "instruction_following": 1.3
+    },
+    "script": {
+      "coding": 1.4,
+      "speed": 1.2
+    },
+    "type_definition": {
+      "coding": 1.4,
+      "instruction_following": 1.4
+    },
+    "migration": {
+      "coding": 1.4,
+      "reasoning": 1.2,
+      "instruction_following": 1.3
+    },
+    "docker": {
+      "coding": 1.3,
+      "instruction_following": 1.4
+    },
+    "cicd": {
+      "coding": 1.3,
+      "instruction_following": 1.4,
+      "reasoning": 1.2
+    },
+    "iac": {
+      "coding": 1.3,
+      "instruction_following": 1.3
+    },
+    "monitoring": {
+      "coding": 1.2,
+      "reasoning": 1.3
+    },
+    "deploy": {
+      "coding": 1.3,
+      "instruction_following": 1.3
+    },
+    "vulnerability": {
+      "reasoning": 2.0,
+      "coding": 1.2
+    },
+    "auth": {
+      "coding": 1.4,
+      "reasoning": 1.5,
+      "instruction_following": 1.3
+    },
+    "audit": {
+      "reasoning": 1.8,
+      "context_length": 1.3
+    },
+    "secret_management": {
+      "reasoning": 1.5,
+      "coding": 1.2
+    }
+  },
+  "recommendation_templates": {
+    "gpt-4.1": {
+      "strengths_text": "チャット乗数0で無制限に使用可能。汎用性が高く速度・品質・コストのバランスが優れています。",
+      "caution_text": "最新の推論モデルと比較すると複雑な論理推論で劣ります。"
+    },
+    "gpt-5-mini": {
+      "strengths_text": "チャット乗数0で無制限に使用可能。高速レスポンスでマルチモーダル入力にも対応しています。",
+      "caution_text": "超大規模リファクタリングにはGPT-5.1/5.2が有利です。"
+    },
+    "gpt-5.1": {
+      "strengths_text": "深い推論・多段階の問題解決に優れています。複雑なアーキテクチャ設計の検討に最適です。",
+      "caution_text": "応答速度は遅め。高速性を求めるタスクにはGPT-5 miniが向いています。"
+    },
+    "gpt-5.1-codex": {
+      "strengths_text": "複雑なエンジニアリングタスクに特化。機能実装・テスト・デバッグに強いです。",
+      "caution_text": "汎用的な質問にはオーバースペックな場合があります。"
+    },
+    "gpt-5.1-codex-mini": {
+      "strengths_text": "低コスト（乗数0.33）で深い推論が可能。Codex系の品質をコスパ良く利用できます。",
+      "caution_text": "プレビュー版のため仕様変更の可能性があります。"
+    },
+    "gpt-5.1-codex-max": {
+      "strengths_text": "エージェント型の自律的開発タスクに最適化。複数ファイルにまたがる大規模変更に対応します。",
+      "caution_text": "応答速度は遅め。簡単なタスクにはオーバースペックです。"
+    },
+    "gpt-5.2": {
+      "strengths_text": "高度な推論・コード分析・技術的意思決定に優れています。最高クラスの推論力です。",
+      "caution_text": "プレミアムリクエストを消費します。高速性を求めるならGPT-5 miniが向いています。"
+    },
+    "gpt-5.2-codex": {
+      "strengths_text": "エージェント型タスクで最高レベルの性能。GPT-5.2の推論力とCodex特化の精度を兼備します。",
+      "caution_text": "応答速度は遅め。一部IDEのみ対応です。"
+    },
+    "gpt-5.3-codex": {
+      "strengths_text": "最新世代のCodexモデル。高い推論力とコード生成精度を持ちます。",
+      "caution_text": "VS CodeとGitHub.comのみ対応。JetBrains等では使用不可です。"
+    },
+    "claude-haiku-4.5": {
+      "strengths_text": "非常に高速なレスポンスと低コスト（乗数0.33）。軽量なコード説明に最適です。",
+      "caution_text": "複雑な推論やリファクタリングには力不足です。"
+    },
+    "claude-opus-4.5": {
+      "strengths_text": "複雑な問題解決と洗練された推論が強み。高品質なコード生成が可能です。",
+      "caution_text": "高コスト（乗数3）で応答速度が遅めです。"
+    },
+    "claude-opus-4.6": {
+      "strengths_text": "Anthropic最高性能の推論能力。最も困難な問題解決に威力を発揮します。",
+      "caution_text": "高コスト（乗数3）で応答速度が遅めです。"
+    },
+    "claude-opus-4.6-fast": {
+      "strengths_text": "Opus 4.6相当の推論力を高速で提供。レイテンシが重要な高度タスクに最適です。",
+      "caution_text": "極めて高コスト（乗数30）。VS Codeのみ対応のプレビュー版です。"
+    },
+    "claude-sonnet-4": {
+      "strengths_text": "性能と実用性のバランス。信頼性の高い補完とスマートな推論で日常開発に最適です。",
+      "caution_text": "Opus系ほどの推論深度はありません。"
+    },
+    "claude-sonnet-4.5": {
+      "strengths_text": "汎用コーディングとエージェントタスクに優れた次世代Sonnet。",
+      "caution_text": "Opus系と比較すると最も困難な推論で差があります。"
+    },
+    "claude-sonnet-4.6": {
+      "strengths_text": "最新Sonnet。さらに改善された推論とコーディング精度。乗数1でバランスの良いコスパです。",
+      "caution_text": "VS Code/GitHub.com/JetBrainsのみ対応です。"
+    },
+    "gemini-2.5-pro": {
+      "strengths_text": "1Mトークンの超大容量コンテキストが最大の強み。プロジェクト全体を一度に把握させる用途に最適です。",
+      "caution_text": "応答速度はFlash系より遅いです。"
+    },
+    "gemini-3-flash": {
+      "strengths_text": "高速＆低コスト（乗数0.33）。1Mトークンの長いコンテキストも扱えます。",
+      "caution_text": "プレビュー版。複雑な推論タスクには不向きです。"
+    },
+    "gemini-3-pro": {
+      "strengths_text": "高度な推論力と長コンテキスト対応。マルチモーダル入力もサポートしています。",
+      "caution_text": "プレビュー版で仕様変更の可能性があります。"
+    },
+    "gemini-3.1-pro": {
+      "strengths_text": "編集→テストの反復ループに最適化。ツール精度が高いです。",
+      "caution_text": "プレビュー版。一部IDEでのみ利用可能です。"
+    },
+    "grok-code-fast-1": {
+      "strengths_text": "非常に低コスト（乗数0.25）でコーディングに特化した高速モデルです。",
+      "caution_text": "コンテキスト長が128Kと比較的短いです。複雑な推論タスクには不向きです。"
+    },
+    "raptor-mini": {
+      "strengths_text": "チャット乗数0で無制限使用可能。GPT-5 miniベースの高速インライン提案に特化しています。",
+      "caution_text": "プレビュー版。VS Codeのみ。深い推論タスクには不向きです。"
+    },
+    "goldeneye": {
+      "strengths_text": "GPT-5.1-Codexベースの高品質ファインチューン。コード補完に特化しています。",
+      "caution_text": "プレビュー版。VS Codeのみ。チャットでは使用不可（補完専用）です。"
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "version": "2026-02-25T13:21:46.668821+00:00",
+  "last_updated": "2026-02-25T13:21:46.668821+00:00",
+  "models": [
+    {
+      "id": "gemini-2.5-flash",
+      "name": "Gemini 2.5 Flash",
+      "display_name": "Gemini 2.5 Flash",
+      "description": "Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.",
+      "version": "001",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "display_name": "Gemini 2.5 Pro",
+      "description": "Stable release (June 17th, 2025) of Gemini 2.5 Pro",
+      "version": "2.5",
+      "tier": "pro",
+      "performance": {
+        "quality": 5.0,
+        "speed": 3.5,
+        "cost": 3
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": true
+    },
+    {
+      "id": "gemini-2.0-flash",
+      "name": "Gemini 2.0 Flash",
+      "display_name": "Gemini 2.0 Flash",
+      "description": "Gemini 2.0 Flash",
+      "version": "2.0",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.0-flash-lite",
+      "name": "Gemini 2.0 Flash-Lite",
+      "display_name": "Gemini 2.0 Flash-Lite",
+      "description": "Gemini 2.0 Flash-Lite",
+      "version": "2.0",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-lite",
+      "name": "Gemini 2.5 Flash-Lite",
+      "display_name": "Gemini 2.5 Flash-Lite",
+      "description": "Stable version of Gemini 2.5 Flash-Lite, released in July of 2025",
+      "version": "001",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-image",
+      "name": "Nano Banana",
+      "display_name": "Nano Banana",
+      "description": "Gemini 2.5 Flash Preview Image",
+      "version": "2.0",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 32768,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-lite-preview-09-2025",
+      "name": "Gemini 2.5 Flash-Lite Preview Sep 2025",
+      "display_name": "Gemini 2.5 Flash-Lite Preview Sep 2025",
+      "description": "Preview release (Septempber 25th, 2025) of Gemini 2.5 Flash-Lite",
+      "version": "2.5-preview-09-25",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-3-pro-preview",
+      "name": "Gemini 3 Pro Preview",
+      "display_name": "Gemini 3 Pro Preview",
+      "description": "Gemini 3 Pro Preview",
+      "version": "3-pro-preview-11-2025",
+      "tier": "pro",
+      "performance": {
+        "quality": 5.0,
+        "speed": 3.5,
+        "cost": 3
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "name": "Gemini 3 Flash Preview",
+      "display_name": "Gemini 3 Flash Preview",
+      "description": "Gemini 3 Flash Preview",
+      "version": "3-flash-preview-12-2025",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-3.1-pro-preview",
+      "name": "Gemini 3.1 Pro Preview",
+      "display_name": "Gemini 3.1 Pro Preview",
+      "description": "Gemini 3.1 Pro Preview",
+      "version": "3.1-pro-preview-01-2026",
+      "tier": "pro",
+      "performance": {
+        "quality": 5.0,
+        "speed": 3.5,
+        "cost": 3
+      },
+      "context_length": 1048576,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-3-pro-image-preview",
+      "name": "Nano Banana Pro",
+      "display_name": "Nano Banana Pro",
+      "description": "Gemini 3 Pro Image Preview",
+      "version": "3.0",
+      "tier": "pro",
+      "performance": {
+        "quality": 5.0,
+        "speed": 3.5,
+        "cost": 3
+      },
+      "context_length": 131072,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-native-audio-latest",
+      "name": "Gemini 2.5 Flash Native Audio Latest",
+      "display_name": "Gemini 2.5 Flash Native Audio Latest",
+      "description": "Latest release of Gemini 2.5 Flash Native Audio",
+      "version": "Gemini 2.5 Flash Native Audio Latest",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 131072,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-native-audio-preview-09-2025",
+      "name": "Gemini 2.5 Flash Native Audio Preview 09-2025",
+      "display_name": "Gemini 2.5 Flash Native Audio Preview 09-2025",
+      "description": "Gemini 2.5 Flash Native Audio Preview 09-2025",
+      "version": "gemini-2.5-flash-preview-native-audio-dialog-2025-05-19",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 131072,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    },
+    {
+      "id": "gemini-2.5-flash-native-audio-preview-12-2025",
+      "name": "Gemini 2.5 Flash Native Audio Preview 12-2025",
+      "display_name": "Gemini 2.5 Flash Native Audio Preview 12-2025",
+      "description": "Gemini 2.5 Flash Native Audio Preview 12-2025",
+      "version": "12-2025",
+      "tier": "flash",
+      "performance": {
+        "quality": 4.5,
+        "speed": 5.0,
+        "cost": 5
+      },
+      "context_length": 131072,
+      "recommended_for": [],
+      "available": true,
+      "default": false
+    }
+  ]
+}

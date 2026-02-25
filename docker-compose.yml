@@ -1,0 +1,49 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app
+      - backend-data:/app/data
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL=sqlite:////app/data/app.db
+      - SCRAPE_TIMEOUT=${SCRAPE_TIMEOUT:-30}
+      - SCRAPE_MAX_RETRIES=${SCRAPE_MAX_RETRIES:-3}
+      - LLM_MODEL=${LLM_MODEL:-gemini-2.5-flash-lite}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.3}
+      - LLM_MAX_TOKENS=${LLM_MAX_TOKENS:-8192}
+      - ORGANIZATION_NAME=${ORGANIZATION_NAME:-Internal Use}
+      - ENABLE_USAGE_ANALYTICS=${ENABLE_USAGE_ANALYTICS:-false}
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+volumes:
+  backend-data:
+  redis-data:
