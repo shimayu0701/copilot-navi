@@ -1,6 +1,6 @@
 # GitHub Copilot モデル選択ナビゲーター
 
-> **社内向けツール**: 最適な GitHub Copilot モデルをチャート形式で推薦
+> **社内・個人向けツール**: 最適な GitHub Copilot モデルをチャート形式で推薦
 
 ## 📖 概要
 
@@ -31,8 +31,8 @@ GitHub Copilot で「どのモデルを選べばいいか分からない」と�
 #### 1️⃣ リポジトリをクローン
 
 ```bash
-git clone https://github.com/yourcompany/copilot-model-navigator.git
-cd copilot-model-navigator
+git clone https://github.com/shimayu0701/copilot-navi.git
+cd copilot-navi
 ```
 
 **初回セットアップの場合:**
@@ -42,7 +42,7 @@ cd copilot-model-navigator
 git pull origin main
 
 # 依存関係の確認（Docker が自動的にインストール）
-docker-compose build
+docker compose build
 ```
 
 #### 2️⃣ Gemini API キーを取得
@@ -53,6 +53,11 @@ docker-compose build
 - キーをコピーして安全に保管
 
 #### 3️⃣ 環境変数を設定
+
+Gemini API キーは以下のどちらでも設定できます。
+
+- **設定画面（推奨）**: ブラウザに保存され、サーバー側の .env は不要
+- **.env に直接設定**: サーバー側でデフォルトを持たせたい場合（ヘッドレス運用など）
 
 ```bash
 # サンプルファイルからコピー
@@ -65,7 +70,7 @@ nano .env  # または vim, code, etc
 `.env` の設定例:
 
 ```env
-# Gemini API キー（必須）
+# Gemini API キー（任意: 設定画面で保存する場合は不要）
 GEMINI_API_KEY=AIzaSy_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # アプリケーション設定
@@ -76,7 +81,7 @@ LLM_MODEL=gemini-2.5-flash-lite
 **各設定項目:**
 | 項目 | 必須 | 説明 |
 | --------------------- | ---- | ------------------------------------- |
-| `GEMINI_API_KEY` | ✅ | Google AI Studio から取得 |
+| `GEMINI_API_KEY` | ❌ | 設定画面で保存する場合は不要。サーバー側のデフォルトにする場合のみ設定 |
 | `ORGANIZATION_NAME` | ❌ | 設定画面に表示される組織名（デフォルト: "Organization"） |
 | `LLM_MODEL` | ❌ | データ更新に使用するモデル（デフォルト: `gemini-2.5-flash-lite`） |
 
@@ -84,17 +89,17 @@ LLM_MODEL=gemini-2.5-flash-lite
 
 ```bash
 # すべてのコンテナを起動
-docker-compose up
+docker compose up
 
 # バックグラウンド実行の場合
-docker-compose up -d
+docker compose up -d
 ```
 
 **起動確認:**
 
 ```bash
 # コンテナが正常に起動しているか確認
-docker-compose ps
+docker compose ps
 ```
 
 出力例:
@@ -126,10 +131,10 @@ http://localhost:3000
 git pull origin main
 
 # Dockerイメージを再構築
-docker-compose build
+docker compose build
 
 # コンテナを再起動
-docker-compose up -d
+docker compose up -d
 ```
 
 **注意:** `.env` ファイルの設定は保持されます（git でトラッキングされていないため）
@@ -138,13 +143,13 @@ docker-compose up -d
 
 ```bash
 # コンテナを停止
-docker-compose down
+docker compose down
 
 # ボリューム（データベース）を削除してリセット
-docker-compose down -v
+docker compose down -v
 
 # 再度起動
-docker-compose up -d
+docker compose up -d
 ```
 
 ## 📚 ドキュメント
@@ -255,7 +260,7 @@ copilot-model-navigator/
 ## 🔒 セキュリティとプライバシー
 
 - **API キー**: 環境変数で管理、フロントエンドに露出しない
-- **診断履歴**: ローカルの SQLite DB にのみ保存（外部送信なし）
+- **診断履歴**: ブラウザの LocalStorage にのみ保存（外部送信なし）
 - **データ更新**: 公開情報のみを使用（個人情報・社内情報は含まない）
 - **ネットワーク**: 社内ネットワーク内での利用を想定
 
@@ -267,8 +272,8 @@ copilot-model-navigator/
 
 ```bash
 # ポートが既に使用されている場合
-docker-compose down
-docker-compose up
+docker compose down
+docker compose up
 ```
 
 **Q: Gemini API でエラーが出る**
@@ -291,183 +296,9 @@ docker-compose up
 - 情報ソース（GitHub, OpenAI等のサイト）が利用可能か確認
 - Gemini API のレート制限を確認
 
-## 📞 サポート
-
-問題が発生した場合は、社内 Slack の `#dev-tools` チャンネルで質問してください。
-
-## 🎨 今後の拡張案
-
-- VS Code 拡張機能
-- チーム内利用統計の可視化
-- Google Workspace SSO 連携
-- Cursor、Windsurf 等の他 AI ツール対応
-
 ## 📄 ライセンス
 
-社内利用限定
-
----
-
-**Made with ❤️ for developers**
-
-## 📚 ドキュメント
-
-詳細な仕様書は [docs/SPECIFICATION.md](docs/SPECIFICATION.md) を参照してください。
-
-### 主要ドキュメント
-
-| ドキュメント                    | 内容                                  |
-| ------------------------------- | ------------------------------------- |
-| [仕様書](docs/SPECIFICATION.md) | システム全体の詳細仕様                |
-| ケーススタディ                  | 120+ の開発シナリオを網羅             |
-| チャートフロー                  | 診断の質問フロー設計                  |
-| データ更新機能                  | Gemini API による最新情報取得の仕組み |
-| システム構成                    | アーキテクチャ・技術スタック          |
-
-## 🎯 使い方
-
-### 1. 診断を開始
-
-トップページの「診断を始める」ボタンをクリック
-
-### 2. 質問に回答
-
-- **Q1**: 今やりたいことは？（大分類）
-- **Q2**: もう少し具体的に？（中分類）
-- **Q3**: 補足条件（複雑度・重視ポイント・コンテキスト量）
-
-### 3. 推薦結果を確認
-
-- **第1〜3候補**のモデルと適合度スコア
-- **推薦理由**と注意点
-- **モデル比較チャート**（レーダーチャート）
-
-### 4. 最新データを取得（オプション）
-
-設定画面（⚙️アイコン）の「🔄 最新データを取得」から、最新のモデル情報を自動取得・更新できます。
-
-**使用するモデルの変更方法:**
-
-データ更新時に使用する LLM モデルは `.env` ファイルの `LLM_MODEL` で指定します。
-
-1. `.env` ファイルを編集
-2. `LLM_MODEL=` の値を変更（例: `gemini-2.5-pro` → `gemini-2.5-flash`）
-3. バックエンドコンテナを再起動
-
-```bash
-# コンテナを再起動して .env の変更を反映
-docker compose up -d backend
-```
-
-**推奨モデルの選び方:**
-
-| 用途         | 推奨モデル              | 理由                                   |
-| ------------ | ----------------------- | -------------------------------------- |
-| 通常の更新   | `gemini-2.5-pro`        | 最高品質・最新、週1回程度の更新に最適  |
-| 高速更新     | `gemini-2.5-flash`      | 高速・低コスト、即座に結果が必要な場合 |
-| 軽量・テスト | `gemini-2.5-flash-lite` | 最速・最低コスト（デフォルト）         |
-
-### 5. レート制限を確認
-
-設定画面（⚙️アイコン）の「📊 レート制限状況」で以下を確認できます：
-
-- **現在使用中のモデル**: `.env` で設定した LLM モデル
-- **レート制限状況**: RPM/TPM の使用率をリアルタイム表示
-- **ステータス表示**:
-    - ✅ 利用可能 (0-80%)
-    - ⚠️ 制限接近中 (80-95%)
-    - 🚫 制限到達 (95-100%)
-
-## 🛠️ 技術スタック
-
-### フロントエンド
-
-- React 19 + TypeScript
-- Vite
-- Tailwind CSS
-- React Query (TanStack Query)
-
-### バックエンド
-
-- Python 3.12
-- FastAPI
-- SQLite
-- Redis
-- Google Gemini API (google-generativeai)
-
-### インフラ
-
-- Docker + Docker Compose
-
-## 📂 プロジェクト構成
-
-```
-copilot-model-navigator/
-├── docs/                      # ドキュメント
-│   └── SPECIFICATION.md       # 詳細仕様書
-├── frontend/                  # React フロントエンド
-├── backend/                   # FastAPI バックエンド
-│   └── app/
-│       ├── routers/           # API エンドポイント
-│       ├── services/          # ビジネスロジック
-│       └── data/              # モデルデータ（JSON）
-├── docker-compose.yml         # Docker 構成
-└── .env.example               # 環境変数サンプル
-```
-
-## 🔒 セキュリティとプライバシー
-
-- **API キー**: 環境変数で管理、フロントエンドに露出しない
-- **診断履歴**: ローカルの SQLite DB にのみ保存（外部送信なし）
-- **データ更新**: 公開情報のみを使用（個人情報・社内情報は含まない）
-- **ネットワーク**: 社内ネットワーク内での利用を想定
-
-## 🤝 トラブルシューティング
-
-### よくある問題
-
-**Q: Docker コンテナが起動しない**
-
-```bash
-# ポートが既に使用されている場合
-docker-compose down
-docker-compose up
-```
-
-**Q: Gemini API でエラーが出る**
-
-- `.env` ファイルに正しい API キーが設定されているか確認
-- Google AI Studio で API キーが有効か確認
-- 設定画面でレート制限を確認
-
-**Q: レート制限に到達した**
-
-- 設定画面（⚙️）で各モデルのレート制限を確認
-- `.env` ファイルの `LLM_MODEL` を別のモデルに変更
-- `docker compose up -d backend` でバックエンドを再起動
-- レート制限は1分ごとにリセットされるため、少し待ってから再試行
-- 例: `gemini-2.5-pro` が制限到達 → `gemini-2.5-flash` や `gemini-2.5-flash-lite` に変更
-
-**Q: データ更新が失敗する**
-
-- インターネット接続を確認
-- 情報ソース（GitHub, OpenAI等のサイト）が利用可能か確認
-- Gemini API のレート制限を確認
-
-## 📞 サポート
-
-問題が発生した場合は、社内 Slack の `#dev-tools` チャンネルで質問してください。
-
-## 🎨 今後の拡張案
-
-- VS Code 拡張機能
-- チーム内利用統計の可視化
-- Google Workspace SSO 連携
-- Cursor、Windsurf 等の他 AI ツール対応
-
-## 📄 ライセンス
-
-社内利用限定
+社内・個人利用限定
 
 ---
 
